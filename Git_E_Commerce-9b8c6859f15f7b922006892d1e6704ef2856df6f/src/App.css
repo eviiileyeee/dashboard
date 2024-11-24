@@ -41,6 +41,9 @@ header button.rounded-circle{
   border: none !important;
 }
 
+header button.rounded-circle:hover svg{
+ color: blue;
+}
 
 header button.rounded-circle svg{
   color: #292929;
@@ -59,4 +62,101 @@ header button.rounded-circle svg{
   border: 0px;
   overflow: none;
   padding-left: 5px;
+}
+.myAcc {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent; /* Prevents tap highlight on mobile */
+  user-select: none; /* Prevents text selection */
+}
+
+/* Override Bootstrap's default focus styles */
+.myAcc:focus,
+.myAcc.focus,
+.myAcc:active,
+.myAcc.active,
+.myAcc:active:focus,
+.btn-check:checked + .myAcc:focus,
+.btn-check:active + .myAcc:focus {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: inherit !important;
+  border-color: transparent !important;
+}
+
+.myAcc:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.myAcc:active,
+.myAcc:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: scale(0.98);
+  outline: none;
+}
+
+/* Override any focus styles */
+.myAcc:focus-visible {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.myAcc::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: scaleX(0);
+  transition: transform 0.1s ease;
+}
+
+.myAcc:hover::after {
+  transform: scaleX(1);
+}
+
+/* Rest of your styles remain the same */
+.userImg .rounded-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.userImg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.userInfo {
+  margin-left: 8px;
+  color: #333;
+}
+
+.userInfo h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.userInfo p {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
 }
